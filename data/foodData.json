@@ -1,0 +1,321 @@
+{
+    "classes": {
+        "protein": [
+            "milk",
+            "chicken",
+            "beef",
+            "egg",
+            "fish",
+            "tofu",
+            "yogurt",
+            "cheese",
+            "beans",
+            "peas",
+            "shrimp",
+            "turkey"
+        ],
+        "fat": [
+            "almonds",
+            "peanuts",
+            "olive oil",
+            "butter",
+            "avocado",
+            "salmon",
+            "walnuts",
+            "cashews",
+            "sunflower seeds",
+            "pumpkin seeds"
+        ],
+        "carbohydrate": [
+            "bread",
+            "rice",
+            "pasta",
+            "potato",
+            "corn",
+            "banana",
+            "apple",
+            "mango",
+            "oats",
+            "sweet potato",
+            "honey"
+        ],
+        "vitamin": [
+            "orange",
+            "spinach",
+            "broccoli",
+            "carrot",
+            "tomato",
+            "lettuce",
+            "cucumber",
+            "bell pepper",
+            "kale",
+            "strawberry",
+            "blueberry",
+            "eggplant",
+            "mushroom",
+            "zucchini",
+            "garlic",
+            "onion"
+        ]
+    },
+    "units": {
+        "liters": [
+            "milk",
+            "yogurt",
+            "olive oil"
+        ],
+        "milliliters": [
+            "honey"
+        ],
+        "kilograms": [
+            "chicken",
+            "beef",
+            "fish",
+            "tofu",
+            "cheese",
+            "beans",
+            "peas",
+            "shrimp",
+            "turkey",
+            "butter",
+            "salmon",
+            "rice",
+            "pasta",
+            "potato",
+            "sweet potato",
+            "corn",
+            "oats"
+        ],
+        "grams": [
+            "peanuts",
+            "almonds",
+            "walnuts",
+            "cashews",
+            "sunflower seeds",
+            "pumpkin seeds"
+        ],
+        "pieces": [
+            "egg",
+            "banana",
+            "apple",
+            "mango",
+            "orange",
+            "tomato",
+            "bell pepper",
+            "strawberry",
+            "blueberry",
+            "eggplant",
+            "mushroom",
+            "zucchini",
+            "garlic",
+            "onion"
+        ],
+        "bunches": [
+            "spinach",
+            "lettuce",
+            "kale",
+            "broccoli",
+            "carrot",
+            "cucumber"
+        ]
+    },
+    "storage": {
+        "milk": {
+            "category": "dairy",
+            "perishable": true,
+            "hasOpenedState": true,
+            "storageOptions": {
+                "fridge": {
+                    "opened": 5,
+                    "unopened": 10
+                },
+                "freezer": {
+                    "opened": 90,
+                    "unopened": 90
+                }
+            },
+            "bestStoredIn": "fridge",
+            "canBeStoredIn": [
+                "fridge",
+                "freezer"
+            ]
+        },
+        "yogurt": {
+            "category": "dairy",
+            "perishable": true,
+            "hasOpenedState": true,
+            "storageOptions": {
+                "fridge": {
+                    "opened": 7,
+                    "unopened": 30
+                },
+                "freezer": {
+                    "opened": 60,
+                    "unopened": 60
+                }
+            },
+            "bestStoredIn": "fridge",
+            "canBeStoredIn": [
+                "fridge",
+                "freezer"
+            ]
+        },
+        "olive oil": {
+            "category": "pantry",
+            "perishable": false,
+            "hasOpenedState": true,
+            "storageOptions": {
+                "shelf": {
+                    "opened": 365,
+                    "unopened": 720
+                },
+                "fridge": {
+                    "opened": 180,
+                    "unopened": 365
+                }
+            },
+            "bestStoredIn": "shelf",
+            "canBeStoredIn": [
+                "shelf",
+                "fridge"
+            ]
+        },
+        "bread": {
+            "category": "bakery",
+            "perishable": true,
+            "hasOpenedState": true,
+            "storageOptions": {
+                "fridge": {
+                    "opened": 7,
+                    "unopened": 10
+                },
+                "shelf": {
+                    "opened": 3,
+                    "unopened": 5
+                },
+                "freezer": {
+                    "opened": 90,
+                    "unopened": 90
+                }
+            },
+            "bestStoredIn": "freezer",
+            "canBeStoredIn": [
+                "fridge",
+                "shelf",
+                "freezer"
+            ]
+        },
+        "chicken": {
+            "category": "meat",
+            "perishable": true,
+            "hasOpenedState": true,
+            "storageOptions": {
+                "fridge": {
+                    "opened": 1,
+                    "unopened": 2
+                },
+                "freezer": {
+                    "opened": 180,
+                    "unopened": 180
+                }
+            },
+            "bestStoredIn": "freezer",
+            "canBeStoredIn": [
+                "fridge",
+                "freezer"
+            ]
+        },
+        "apple": {
+            "category": "fruit",
+            "perishable": true,
+            "hasOpenedState": false,
+            "storageOptions": {
+                "fridge": {
+                    "default": 30
+                },
+                "shelf": {
+                    "default": 14
+                },
+                "freezer": {
+                    "default": 240
+                }
+            },
+            "bestStoredIn": "fridge",
+            "canBeStoredIn": [
+                "fridge",
+                "shelf",
+                "freezer"
+            ]
+        },
+        "peanuts": {
+            "category": "pantry",
+            "perishable": false,
+            "hasOpenedState": true,
+            "storageOptions": {
+                "fridge": {
+                    "opened": 120,
+                    "unopened": 180
+                },
+                "shelf": {
+                    "opened": 60,
+                    "unopened": 90
+                },
+                "freezer": {
+                    "opened": 365,
+                    "unopened": 365
+                }
+            },
+            "bestStoredIn": "shelf",
+            "canBeStoredIn": [
+                "fridge",
+                "shelf",
+                "freezer"
+            ]
+        },
+        "fish": {
+            "category": "meat",
+            "perishable": true,
+            "hasOpenedState": true,
+            "storageOptions": {
+                "fridge": {
+                    "opened": 1,
+                    "unopened": 2
+                },
+                "freezer": {
+                    "opened": 180,
+                    "unopened": 180
+                }
+            },
+            "bestStoredIn": "freezer",
+            "canBeStoredIn": [
+                "fridge",
+                "freezer"
+            ]
+        },
+        "butter": {
+            "category": "dairy",
+            "perishable": true,
+            "hasOpenedState": true,
+            "storageOptions": {
+                "fridge": {
+                    "opened": 30,
+                    "unopened": 60
+                },
+                "shelf": {
+                    "opened": 3,
+                    "unopened": 5
+                },
+                "freezer": {
+                    "opened": 365,
+                    "unopened": 365
+                }
+            },
+            "bestStoredIn": "fridge",
+            "canBeStoredIn": [
+                "fridge",
+                "shelf",
+                "freezer"
+            ]
+        }
+    }
+}

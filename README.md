@@ -26,4 +26,4 @@ GROCERY-MANAGER/
 | |** foodData.json
 | |** recipeData.json
 | |** invenoryData.json
-|** README.md
+|-- README.md

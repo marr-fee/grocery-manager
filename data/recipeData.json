@@ -1,0 +1,111 @@
+[
+    {
+        "id": 1,
+        "name": "Pancakes",
+        "image": "\ud83e\udd5e",
+        "category": "Breakfast",
+        "ingredients": [
+            {
+                "name": "Flour",
+                "qty": "1 cup"
+            },
+            {
+                "name": "Milk",
+                "qty": "1 cup"
+            },
+            {
+                "name": "Egg",
+                "qty": "1"
+            }
+        ],
+        "steps": [
+            "Mix all ingredients in a bowl.",
+            "Pour batter onto a hot pan.",
+            "Flip when bubbles appear and cook until golden."
+        ],
+        "time": 15,
+        "difficulty": "Easy",
+        "servings": "1-2",
+        "keywords": [
+            "Breakfast",
+            "Quick",
+            "Easy"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Grilled Cheese Sandwich",
+        "image": "\ud83e\uddc0",
+        "category": "Lunch",
+        "ingredients": [
+            {
+                "name": "Bread",
+                "qty": "2 slices"
+            },
+            {
+                "name": "Cheese",
+                "qty": "2 slices"
+            },
+            {
+                "name": "Butter",
+                "qty": "1 tbsp"
+            }
+        ],
+        "steps": [
+            "Butter one side of each bread slice.",
+            "Place cheese between the unbuttered sides.",
+            "Cook on a hot pan until both sides are golden brown and cheese is melted."
+        ],
+        "time": 15,
+        "difficulty": "Easy",
+        "servings": "1-2",
+        "keywords": [
+            "Lunch",
+            "Quick",
+            "Cheesy"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Spaghetti Bolognese",
+        "image": "\ud83c\udf5d",
+        "category": "Dinner",
+        "ingredients": [
+            {
+                "name": "Spaghetti",
+                "qty": "200g"
+            },
+            {
+                "name": "Ground Beef",
+                "qty": "250g"
+            },
+            {
+                "name": "Tomato Sauce",
+                "qty": "1 cup"
+            },
+            {
+                "name": "Onion",
+                "qty": "1 small"
+            },
+            {
+                "name": "Garlic",
+                "qty": "2 cloves"
+            }
+        ],
+        "steps": [
+            "Cook spaghetti according to package instructions.",
+            "In a pan, saut\u00e9 onion and garlic until fragrant.",
+            "Add ground beef and cook until browned.",
+            "Stir in tomato sauce and simmer for 10\u201315 minutes.",
+            "Serve sauce over the cooked spaghetti."
+        ],
+        "time": 30,
+        "difficulty": "Medium",
+        "servings": "Family",
+        "keywords": [
+            "Dinner",
+            "Pasta",
+            "Italian"
+        ]
+    }
+]
