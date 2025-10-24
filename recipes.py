@@ -60,6 +60,8 @@ def generate_recipe(inventory):
     if inventory == 'own':
         print("Searching Your Inventory...")
         found = []
+        required = []
+        missing = []
         for recipe in data.RECIPES: 
             if (recipe.get('category') == food_category 
             and recipe.get('time') == cook_time 
@@ -68,18 +70,21 @@ def generate_recipe(inventory):
                 required = [ingr['name'] for ingr in recipe['ingredients']]
                 missing = [ing for ing in required if ing not in data.INVENTORY]
         
-            if not missing:
-                found.append(recipe)
-            else:
-                print(f"\n🔸 You Could Make {recipe['name']} But The Following Ingredients Are Missing: {', '.join(missing)}")
-                shopping_list_permission = input("Would You Like Me To Add This To Your Shopping List? (Yes / No): ").strip().lower()
-                if shopping_list_permission == 'yes':
-                    filename = input("Enter Filename: ")
-                    generate_shopping_list(filename, missing)
-                    print("✅ Items Saved To Shopping List.")
-                    return
-                elif shopping_list_permission == 'no':
-                    return
+                if not missing:
+                    print(food_allergies)
+                    print(required)
+                    print(missing)
+                    found.append(recipe)
+                else:
+                    print(f"\n🔸 You Could Make {recipe['name']} but The Following Ingredients Are Missing: {', '.join(missing)}")
+                    shopping_list_permission = input("Would You Like Me To Add This To Your Shopping List? (Yes / No): ").strip().lower()
+                    if shopping_list_permission == 'yes':
+                        filename = input("Enter Filename: ")
+                        generate_shopping_list(filename, missing)
+                        print("✅ Items Saved To Shopping List.")
+                        return
+                    elif shopping_list_permission == 'no':
+                        return
             
         if not found:
             print("\nNo Recipes Found")

@@ -25,7 +25,7 @@ def load_data():
     else:
         print("Loading Error")
     return FOOD_DATA, RECIPES
-# INVENTORY = [] TODO: LOAD INVENTORY DATA
+INVENTORY = [] #TODO: LOAD INVENTORY DATA
 FOOD_DATA, RECIPES = load_data()
 
 def dump_data():
