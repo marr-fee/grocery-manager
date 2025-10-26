@@ -25,8 +25,8 @@ def load_data():
     else:
         print("Loading Error")
     return FOOD_DATA, RECIPES
-INVENTORY = [] #TODO: LOAD INVENTORY DATA
-FOOD_DATA, RECIPES = load_data()
+
+
 
 def dump_data():
     try:
@@ -42,3 +42,26 @@ def dump_data():
             # print('Recipe File Dumped ✅')
     except:
         print("Error Dumping File.")
+
+
+INVENTORY = [
+    {'name': 'fridge', 'items': [{
+        'name': 'testA',
+        'expiry date': 'YYYY-MM-DD',
+        'quantity': 2,
+        'size': 1,
+        'unit': 'kg'
+    },
+    {
+        'name': 'testB',
+        'expiry date': 'YYYY-MM-DD',
+        'quantity': 4,
+        'size': 3,
+        'unit': 'grams'
+    },]},
+    {'name': 'freezer', 'items': ['test1', 'test2']},
+    {'name': 'pantry', 'items': []},
+    {'name': 'all', 'items': []},
+]
+
+FOOD_DATA, RECIPES = load_data()
