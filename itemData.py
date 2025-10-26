@@ -1,18 +1,13 @@
-import programData as data
+import programData as dta
 
 
 def get_item_details(item):
     """ 
     Retrieves all stored details about a specific food item.
-
-    Looks up the given item in the FOOD_DATA dictionary (imported from programData)
-    to extract its class, measurement unit, category, and storage-related properties.  
-    Returns a dictionary containing all the relevant information about the item.  
-    If the item cannot be found, a warning is printed and None is returned.
     """
-    classes = data.FOOD_DATA["classes"]
-    units = data.FOOD_DATA["units"]
-    storage = data.FOOD_DATA["storage"]
+    classes = dta.FOOD_DATA["classes"]
+    units = dta.FOOD_DATA["units"]
+    storage = dta.FOOD_DATA["storage"]
 
     item_class = None
     item_unit = None
@@ -66,10 +61,6 @@ def get_item_details(item):
 def unpack_shelflife_data(data):
     """ 
     Extracts and organizes the shelf life information for an item.
-
-    Takes a dictionary of item data (from get_item_details) and returns a new dictionary 
-    containing shelf life durations for each possible storage location.  
-    It distinguishes between opened/unopened states if applicable.
     """
     storage_info = {}
     storage_options = data.get('storageOptions', {})
@@ -91,19 +82,11 @@ def unpack_shelflife_data(data):
     return storage_info
 
 
-def print_item_info(item):
+def print_item_info():
     """ 
     Prints a descriptive summary of a specific food item.  
-
-    Fetches all item details and shelf life data, then generates a natural-language 
-    description that explains how long the item lasts, where it’s best stored, and 
-    additional possible storage options.  
-
-    Example Output:
-    "Milk is a dairy product of the liquid food class and is typically measured in liters. 
-     It’s best stored in the fridge, lasting up to 7 days unopened and 3 days if opened. 
-     It can also be stored in the freezer for longer preservation."
     """
+    item = input("Enter Item Name: ").strip().lower()
     data = get_item_details(item)
     shelflife = unpack_shelflife_data(data) 
 
@@ -149,7 +132,13 @@ def print_item_info(item):
     follow_up_storage_sentence = ", ".join(follow_up_description)
 
     print(
-        f"{item.capitalize()} is a {item_category} product of the {item_class} food class and is typically measured in {item_measurement_unit}. "
+        f"\n{item.capitalize()} is a {item_category} product of the {item_class} food class and is typically measured in {item_measurement_unit}. "
         f"It’s best stored in the {best_storage}, lasting {storage_sentence}. "
         f"{follow_up_storage_sentence}"
     )
+
+def print_storage_tips(item):
+    for key , value in dta.FOOD_DATA["storage"].items():
+        if key == item:
+            print(f"Storage Tip: {value["storageTip"]}")
+

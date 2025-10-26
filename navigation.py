@@ -11,18 +11,22 @@ def navigate(stack):
     """
     current_menu = stack[-1]
     if isinstance(current_menu, dict):
+        title = current_menu["title"]
         options = current_menu['options']
-        run_selected_option(options)
+        run_selected_option(options, title)
         return_menu_display(len(stack))
 
 
-def run_selected_option(options):
+def run_selected_option(options, title):
     """ 
     Displays or executes the selected menu option. 
     If 'options' is a dictionary, it prints all available choices. 
     If it's a callable or parameterized function, delegates to handle_func_parameters(). 
     """
     os.system('cls')
+    print(f"{'-' * 50}")
+    print(f"{title.upper()}")
+    print(f"{'-' * 50}")
     if isinstance(options, dict):
         for key, val in options.items():
             print(f"{key}) {val['title'] if isinstance(val, dict) else val}")

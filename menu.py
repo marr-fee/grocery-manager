@@ -1,8 +1,17 @@
 import recipes as recp
 import inventory as inv
+import itemData as itmD
 menu_options = {
   'title': 'Main Menu',
   'options': {
+            '1' : {
+                'title': 'Add Item',
+                #'options': add_item
+                    },
+            '2' : {
+                'title': 'Get Info On Item',
+                'options': itmD.print_item_info
+                    },
             '3' : {
                 'title': 'View Inventory',
                 'options': {
@@ -23,10 +32,13 @@ menu_options = {
                         'options': (inv.display_inventory, 'all')
                     }
                 }                    
-            },
-
+                    },
+            '6' : {
+                'title': 'Remove Item',
+                #'options': check_item_expiry                  
+                    },
             '7' : {
-                'title': 'Get Recipes',
+                'title': 'Recipe Suggestions',
                 'options': {
                     '1': {
                         'title': 'Generate From Ingredients You Have',

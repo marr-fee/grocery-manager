@@ -138,7 +138,8 @@
             "canBeStoredIn": [
                 "fridge",
                 "freezer"
-            ]
+            ],
+            "storageTip": "Keep milk in the coldest part of the fridge, not the door. Always reseal tightly and avoid leaving it out at room temperature."
         },
         "yogurt": {
             "category": "dairy",
@@ -158,7 +159,8 @@
             "canBeStoredIn": [
                 "fridge",
                 "freezer"
-            ]
+            ],
+            "storageTip": "Store yogurt in the fridge and keep the lid tightly closed. Avoid cross-contamination by using clean utensils."
         },
         "olive oil": {
             "category": "pantry",
@@ -178,7 +180,8 @@
             "canBeStoredIn": [
                 "shelf",
                 "fridge"
-            ]
+            ],
+            "storageTip": "Keep olive oil in a cool, dark place away from heat and sunlight. Avoid refrigeration as it can cause cloudiness."
         },
         "bread": {
             "category": "bakery",
@@ -203,7 +206,8 @@
                 "fridge",
                 "shelf",
                 "freezer"
-            ]
+            ],
+            "storageTip": "Freeze bread to preserve freshness. Slice before freezing for easy use and thaw at room temperature when needed."
         },
         "chicken": {
             "category": "meat",
@@ -223,7 +227,8 @@
             "canBeStoredIn": [
                 "fridge",
                 "freezer"
-            ]
+            ],
+            "storageTip": "Freeze chicken promptly if not using within 1\u20132 days. Store in airtight packaging to prevent freezer burn."
         },
         "apple": {
             "category": "fruit",
@@ -245,7 +250,8 @@
                 "fridge",
                 "shelf",
                 "freezer"
-            ]
+            ],
+            "storageTip": "Store apples in the fridge crisper drawer to keep them fresh and crisp. Keep separate from strong-smelling foods."
         },
         "peanuts": {
             "category": "pantry",
@@ -270,7 +276,8 @@
                 "fridge",
                 "shelf",
                 "freezer"
-            ]
+            ],
+            "storageTip": "Store peanuts in an airtight container in a cool, dark pantry. Avoid exposure to moisture and sunlight to prevent rancidity."
         },
         "fish": {
             "category": "meat",
@@ -290,7 +297,8 @@
             "canBeStoredIn": [
                 "fridge",
                 "freezer"
-            ]
+            ],
+            "storageTip": "Freeze fish as soon as possible if not cooking within 1\u20132 days. Wrap tightly to prevent odors and freezer burn."
         },
         "butter": {
             "category": "dairy",
@@ -315,7 +323,8 @@
                 "fridge",
                 "shelf",
                 "freezer"
-            ]
+            ],
+            "storageTip": "Keep butter in its original wrapper or an airtight container in the fridge. For long-term storage, freeze it in sealed portions."
         }
     }
 }

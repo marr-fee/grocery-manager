@@ -1,0 +1,5 @@
+
+
+USER_DATA = {
+  'allergies': []
+}

@@ -1,4 +1,5 @@
 import programData as data
+import userState as user
 
 
 def generate_recipe(inventory):
@@ -7,7 +8,7 @@ def generate_recipe(inventory):
     Filters recipes by category, time, servings, and allergies.
     Can use user inventory or random selection.
     """
-    food_allergies = []
+    food_allergies = user.USER_DATA.get('allergies', [])
     food_categories = {
         '1': 'Breakfast',
         '2': 'Lunch',
@@ -38,14 +39,16 @@ def generate_recipe(inventory):
     print(f"1) Yes\n2) No")
     allergies = input("Select An Option: ")
     if allergies == '1':
-        print("Please Let Us Know The Foods You Are Allergic To")
-        print(f"\n1) Add Food Allergy\n2) Done")
-        option = input("Enter An Option: ").strip()
-        if option == '1':
-            item = input("Enter Food Name: ").strip().capitalize()
-            food_allergies.append(item)
-        elif option == '2':
-            print("Exiting")
+        while True:
+            print("Please Let Us Know The Foods You Are Allergic To")
+            print(f"\n1) Add Food Allergy\n2) Done")
+            option = input("Enter An Option: ").strip()
+            if option == '1':
+                item = input("Enter Food Name: ").strip().capitalize()
+                user.USER_DATA['allergies'].append(item)
+            elif option == '2':
+                print("Exiting")
+                break
 
     print("How Many Servings Do You Plan To Make?")
     print(f"1) 1-2\n2) Family\n3) Party-size\n")
@@ -71,9 +74,6 @@ def generate_recipe(inventory):
                 missing = [ing for ing in required if ing not in data.INVENTORY]
         
                 if not missing:
-                    print(food_allergies)
-                    print(required)
-                    print(missing)
                     found.append(recipe)
                 else:
                     print(f"\n🔸 You Could Make {recipe['name']} but The Following Ingredients Are Missing: {', '.join(missing)}")
