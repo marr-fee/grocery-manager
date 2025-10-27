@@ -6,7 +6,7 @@ menu_options = {
   'options': {
             '1' : {
                 'title': 'Add Item',
-                #'options': add_item
+                'options': inv.add_item
                     },
             '2' : {
                 'title': 'Get Info On Item',
