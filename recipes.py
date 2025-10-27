@@ -1,5 +1,5 @@
 import programData as data
-import userState as user
+import userData as usrD
 
 
 def generate_recipe(inventory):
@@ -8,7 +8,7 @@ def generate_recipe(inventory):
     Filters recipes by category, time, servings, and allergies.
     Can use user inventory or random selection.
     """
-    food_allergies = user.USER_DATA.get('allergies', [])
+    food_allergies = usrD.USER_DATA.get('allergies', [])
     food_categories = {
         '1': 'Breakfast',
         '2': 'Lunch',
@@ -45,7 +45,7 @@ def generate_recipe(inventory):
             option = input("Enter An Option: ").strip()
             if option == '1':
                 item = input("Enter Food Name: ").strip().capitalize()
-                user.USER_DATA['allergies'].append(item)
+                usrD.USER_DATA['allergies'].append(item)
             elif option == '2':
                 print("Exiting")
                 break
@@ -71,7 +71,7 @@ def generate_recipe(inventory):
             and recipe.get('servings') == servings 
             and all(allrg not in [ingr['name'] for ingr in recipe['ingredients']] for allrg in food_allergies)):
                 required = [ingr['name'] for ingr in recipe['ingredients']]
-                missing = [ing for ing in required if ing not in data.INVENTORY]
+                missing = [ing for ing in required if ing not in usrD.USER_DATA["inventory"]]
         
                 if not missing:
                     found.append(recipe)

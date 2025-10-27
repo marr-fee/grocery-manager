@@ -15,7 +15,7 @@ menu_options = {
             '3' : {
                 'title': 'View Inventory',
                 'options': {
-                        '1' : {
+                    '1' : {
                         'title': 'Fridge',
                         'options': (inv.display_inventory, 'fridge')
                     },
@@ -49,6 +49,10 @@ menu_options = {
                         'options': (recp.generate_recipe, 'random')
                     }
                 }
+            },
+            '8' : {
+                'title': 'Notificaions',
+                'options': ''
             }
   }
 }

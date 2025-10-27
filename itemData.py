@@ -1,5 +1,19 @@
 import programData as dta
 
+def abbiviate_unit(unit):
+    if unit == "liters":
+        return 'L'
+    if unit == "milliliters":
+        return 'ml'
+    if unit == "kilograms":
+        return 'kg'
+    if unit == "grams":
+        return 'g'
+    if unit == "pieces":
+        return 'pcs'
+    if unit == "bunches":
+        return 'bnch'
+
 
 def get_item_details(item):
     """ 
@@ -8,15 +22,6 @@ def get_item_details(item):
     classes = dta.FOOD_DATA["classes"]
     units = dta.FOOD_DATA["units"]
     storage = dta.FOOD_DATA["storage"]
-
-    item_class = None
-    item_unit = None
-    item_category = None
-    is_perishable = None
-    has_open_state = None
-    best_storage = None
-    possible_storage_locations = []
-    storage_options = {}
 
     # Find class
     for key, values in classes.items():
@@ -28,27 +33,29 @@ def get_item_details(item):
     for key, values in units.items():
         if item in values:
             item_unit = key
+            abbr_unit = abbiviate_unit(item_unit)
             break
 
     # Find storage info
     for key, data in storage.items():
         if item.lower() == key:
-            item_category = data.get('category')
-            is_perishable = data.get('perishable')
-            has_open_state = data.get('hasOpenedState')
-            best_storage = data.get('bestStoredIn')
+            item_category = data.get('category', 'unknown')
+            is_perishable = data.get('perishable', 'unknown')
+            has_open_state = data.get('hasOpenedState', 'unkown')
+            best_storage = data.get('bestStoredIn', 'unknown')
             possible_storage_locations = data.get('canBeStoredIn', [])
             storage_options = data.get('storageOptions', {})
             break
 
     if not item_class or not item_unit or not item_category:
-        print(f"⚠️ Warning: '{item}' not found in FOOD_DATA.")
+        print(f"⚠️ Warning: '{item}' not found in FOOD DATA.")
         return None
 
     return {
         "name": item,
         "class": item_class,
         "unit": item_unit,
+        "abbr_unit": abbr_unit,
         "category": item_category,
         "perishable": is_perishable,
         "hasOpenedState": has_open_state,

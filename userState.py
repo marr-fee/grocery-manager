@@ -1,5 +1,0 @@
-
-
-USER_DATA = {
-  'allergies': []
-}

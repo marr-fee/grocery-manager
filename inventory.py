@@ -1,5 +1,6 @@
-import programData as data
 import itemData as itmD
+import userData as usrD
+
 
 def update_all_inventory(inventory):
     all_items = [item for section in inventory if section['name'] != 'all' for item in section['items']]
@@ -9,12 +10,9 @@ def update_all_inventory(inventory):
             break
 
 def display_inventory(location):
-    update_all_inventory(data.INVENTORY)
+    update_all_inventory(usrD.USER_DATA["inventory"])
 
-    print(f"{'=' * 15}")
-    print(f"{location.capitalize().center(15)}")    
-    print("===============")   
-    for item in data.INVENTORY:
+    for item in usrD.USER_DATA["inventory"]:
         if item['name'] == location:
             header_printed = False
             for i, itm in enumerate(item['items']):
@@ -23,25 +21,18 @@ def display_inventory(location):
                 exp = itm.get('expiry date', 'unknown')
                 qty = itm.get('quantity', 0)
                 size = str(itm.get('size', 0))
-                unit = str(itm.get('unit', 'unknown'))
+                unit = str(itm.get('abbr_unit', 'unknown'))
 
-                #S = space
-                nS = len(name)+4
-                eS = len(exp)+4
-                qS = len(str(qty))+4
-                sS = (len(size)+ len(unit))+4
-                n_s = len(str(i))+4
-
-                full_len = (nS+eS+qS+sS+n_s)//2
+                border_len = 50
 
                 if not header_printed:
-                  print(f"{'— ' * full_len}")
-                  print(f"|{'sn':^{n_s}}|{'Item':^{nS}}|{'Qty':^{qS}}|{'Size':^{sS}}|{'Exp Date':^{eS}}|")
-                  print(f"{'— ' * full_len}")
+                  print(f"{'— ' * border_len}")
+                  print(f"|{'sn':^5}|{'Items'.upper():^30}|{'Qty':^8}|{'Size':^11}|{'Exp Date':^14}|{'Expires in':^14}|")
+                  print(f"{'— ' * border_len}")
                   header_printed = True
 
-                print(f"|{i:^{n_s}}|{name:^{nS}}|{qty:^{qS}}|{size+unit:^{sS}}|{'Exp Date':^{eS}}|")
-                print(f"{'— ' * full_len}")
+                print(f"|{(i + 1):^5}|{name:^30}|{qty:^8}|{size+unit:^11}|{exp:^14}|{'Expires in':^14}|")
+                print(f"{'— ' * border_len}")
 
 def get_item_size(unit):
     """
